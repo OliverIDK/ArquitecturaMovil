@@ -8,7 +8,6 @@ const VisParametroUno = () => {
     cantidadBotones: "",
     cantidadImagenes: "",
     cantidadSliders: "",
-    cantidadFlatListItems: "",
   });
 
   const usarTextos = (key, value) => {
@@ -20,7 +19,6 @@ const VisParametroUno = () => {
     { key: "cantidadBotones", label: "Cantidad de botones:" },
     { key: "cantidadImagenes", label: "Cantidad de imágenes:" },
     { key: "cantidadSliders", label: "Cantidad de sliders:" },
-    { key: "cantidadFlatListItems", label: "Cantidad de elementos en FlatList:" },
   ];
 
   const renderInput = ({ item }) => (
@@ -43,11 +41,10 @@ const VisParametroUno = () => {
       ListHeaderComponent={<Text style={styles.title}>Vista Principal</Text>}
       ListFooterComponent={
         <VisParametroDos
-          cuantosTextos={parseInt(parametros.cantidadTextos) || 0}
-          cuantosBotones={parseInt(parametros.cantidadBotones) || 0}
-          cuantosImagenes={parseInt(parametros.cantidadImagenes) || 0}
-          cuantosSliders={parseInt(parametros.cantidadSliders) || 0}
-          cuantosFlatListItems={parseInt(parametros.cantidadFlatListItems) || 0}
+          cuantosTextos={(parametros.cantidadTextos)}
+          cuantosBotones={(parametros.cantidadBotones)}
+          cuantosImagenes={(parametros.cantidadImagenes)}
+          cuantosSliders={(parametros.cantidadSliders)}
         />
       }
     />

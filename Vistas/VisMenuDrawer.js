@@ -11,6 +11,9 @@ import VisSecundaria from "./VisSecundaria";
 import Icon from "react-native-vector-icons/Entypo";
 import VisParametroUno from "./VisParametroUno";
 import VisParametroDos from "./VisParametroDos";
+import VisElements from "./VisElements";
+import VisNativeBase from "./VisNativeBase"
+
 const DrawerApp = () => {
   const Drawer = createDrawerNavigator();
   return (
@@ -34,13 +37,13 @@ const DrawerApp = () => {
           drawerIcon: (config) => <Icon size={23} name="home" />,
         }}
       />
-            <Drawer.Screen
+      <Drawer.Screen
         name="VSecundario"
         component={VisSecundaria}
-        options={{drawerItemStyle:{display:"none"}}}
+        options={{ drawerItemStyle: { display: "none" } }}
       />
-      
-            <Drawer.Screen
+
+      <Drawer.Screen
         name="VInicio"
         component={VisInicio}
         options={{
@@ -82,19 +85,34 @@ const DrawerApp = () => {
           drawerIcon: (config) => <Icon size={23} name="key" />,
         }}
       />
-            <Drawer.Screen
+      <Drawer.Screen
         name="VPUno"
-        component={VisParametroUno
-        }
+        component={VisParametroUno}
         options={{
           title: "Vista Parametro",
           drawerIcon: (config) => <Icon size={23} name="key" />,
         }}
       />
-            <Drawer.Screen
+      <Drawer.Screen
         name="VPDos"
         component={VisParametroDos}
-        options={{drawerItemStyle:{display:"none"}}}
+        options={{ drawerItemStyle: { display: "none" } }}
+      />
+      <Drawer.Screen
+        name="VElements"
+        component={VisElements}
+        options={{
+          title: "Vista Elementos",
+          drawerIcon: (config) => <Icon size={23} name="key" />,
+        }}
+      />
+            <Drawer.Screen
+        name="VisNBase"
+        component={VisNativeBase}
+        options={{
+          title: "Vista Elementos",
+          drawerIcon: (config) => <Icon size={23} name="key" />,
+        }}
       />
     </Drawer.Navigator>
   );

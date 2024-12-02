@@ -5,7 +5,6 @@ import {
   View,
   TouchableOpacity,
   ImageBackground,
-  FlatList,
 } from "react-native";
 import Slider from "@react-native-community/slider";
 
@@ -14,14 +13,9 @@ const VisParametroDos = ({
   cuantosBotones,
   cuantosImagenes,
   cuantosSliders,
-  cuantosFlatListItems,
 }) => {
   const [sliderValues, setSliderValues] = useState(
     Array(cuantosSliders).fill(0)
-  );
-
-  const renderFlatListItem = ({ item }) => (
-    <Text style={styles.flatListItem}>{item}</Text>
   );
 
   const render = () => {
@@ -75,21 +69,10 @@ const VisParametroDos = ({
     return elements;
   };
 
-  const flatListData = Array.from(
-    { length: cuantosFlatListItems },
-    (_, index) => `Elemento ${index + 1}`
-  );
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Componente Secundario</Text>
       {render()}
-      <FlatList
-        data={flatListData}
-        renderItem={renderFlatListItem}
-        keyExtractor={(item, index) => index.toString()}
-        nestedScrollEnabled={true}
-      />
     </View>
   );
 };
@@ -112,7 +95,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  textoimage:{
+  textoimage: {
     display:"none"
   },
   sliderContainer: {
